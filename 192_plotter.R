@@ -49,9 +49,13 @@ plotSpectrum2<-function(x,z,yLowerBound=0,yUpperBound=0,ti="",labs=0,bc,labScale
     mid<-rng[1]+24.5
     points(rng,x[rng],type="h",lwd=3,col=type[sb],lend=1)
     arrows(rng, as.numeric(x[rng])- as.numeric(z[1,][1:16]), rng, as.numeric(x[rng])+ as.numeric(z[1,][1:16]), length=0.05, angle=90, code=0,col=type[sb])
-    if (labs!=0){
-      mtext(typeText[sb],side=3,at=mid,col=type[sb],cex=labScale,line=labs,font=2)
+    if (labs==1){
+      mtext(typeText[sb],side=3,at=mid,col=type[sb],cex=labScale,line=0,font=2)
+    }
+    if (labs==2){
+      mtext(typeText[sb],side=3,at=mid,col=type[sb],cex=labScale,line=0,font=2)
+      mtext('Trinucleotide context', side=1, line=-1.5, outer=TRUE,font=1,adj=0.57)
+      mtext('Relative contribution', side=2, line=-1.5, outer=TRUE,font=1)
     }
   }
 }
-
