@@ -1,4 +1,27 @@
-plotSpectrum2<-function(x,z,yLowerBound=0,yUpperBound=0,ti="",labs=0,bc,labScale=1.6,merge=F){
+fastRgb<-function(x){
+  if(length(x)<4){
+    x<-c(x,1)
+  }
+  rgb(x[1],x[2],x[3],x[4])
+}
+
+colMerge<-function(from,to){
+  v<-(from+(to*2))/3
+  v<-v+.2
+  v[which(v>1)]=1
+  fastRgb(v)
+}
+
+baseCol<-matrix(0,4,3)
+minorc<-.3
+baseCol[1,]=c(.7,.7,.7)
+baseCol[2,]=c(0,.45,.7)
+baseCol[3,]=c(.35,.8,1)
+baseCol[4,]=c(.1,.1,.1)
+bc<-baseCol
+aText<-"black"
+
+plotSpectrum<-function(x,z,yLowerBound=0,yUpperBound=0,ti="",labs=0,bc,labScale=1.6,merge=F){
   #expects a standard full or folded mutation spectrum (uses length to discriminate) as a string of values
   if(yUpperBound==0){
     yUpperBound=(max(x)+(max(x)/50))
@@ -48,7 +71,11 @@ plotSpectrum2<-function(x,z,yLowerBound=0,yUpperBound=0,ti="",labs=0,bc,labScale
     rng<-c(1:48)+((sb*48)-48)
     mid<-rng[1]+24.5
     points(rng,x[rng],type="h",lwd=3,col=type[sb],lend=1)
-    arrows(rng, as.numeric(x[rng])- as.numeric(z[1,][1:16]), rng, as.numeric(x[rng])+ as.numeric(z[1,][1:16]), length=0.05, angle=90, code=0,col=type[sb])
+    if missing(z) {
+     }
+    else{
+     arrows(rng, as.numeric(x[rng])- as.numeric(z[1,][1:16]), rng, as.numeric(x[rng])+ as.numeric(z[1,][1:16]), length=0.05, angle=90, code=0,col=type[sb])
+    }
     if (labs==1){
       mtext(typeText[sb],side=3,at=mid,col=type[sb],cex=labScale,line=0,font=2)
     }
