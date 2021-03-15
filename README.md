@@ -7,4 +7,5 @@ par(mar=c(1,5,2,2)) ; plotSpectrum192(signature[1,],signature_error_bars[1,],bc=
 </pre>
 
 ![alt text](https://github.com/CraigJAnderson/plotter/blob/main/example_192_spectra.jpeg)
+![alt text](https://github.com/CraigJAnderson/plotter/blob/main/example_96_spectra.jpeg)
 
