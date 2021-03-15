@@ -6,5 +6,5 @@ scripts to plot lovely mutation spectra in 96 or 192 channel format, using base 
 par(mar=c(1,5,2,2)) ; plotSpectrum192(signature[1,],signature_error_bars[1,],bc=baseCol,labs = 1,yUpperBound = 0.1, yLowerBound = 0,labScale = 1,ylab="mu/Mb",RefHeight=-1.1,AltHeight=-2.15)
 </pre>
 
-![alt text](https://github.com/CraigJAnderson/plotter/example_192_spectra.jpeg)
+![alt text](https://github.com/CraigJAnderson/plotter/blob/main/example_192_spectra.jpeg)
 
