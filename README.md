@@ -8,7 +8,7 @@ par(mar=c(1,5,2,2)) ; plotSpectrum192(signature[1,],bc=baseCol,labs = 1,yUpperBo
 
 ![alt text](https://github.com/CraigJAnderson/plotter/blob/main/example_192_spectra.jpeg)
 
-Let's plot 96 a channel mutational spectrum with confidence intervals 
+Let's plot a 96 channel mutational spectrum with confidence intervals 
 <pre>par(mar=c(1,5,2,2)) ; plotSpectrum96(signature[1,],signature_error_bars[1,],bc=baseCol,labs = 1,yUpperBound = 0.11, yLowerBound = 0,labScale = 1,ylab="mu/Mb",RefHeight=-1.1,AltHeight=-1.9) </pre>
 ![alt text](https://github.com/CraigJAnderson/plotter/blob/main/example_96_spectra.jpeg)
 
